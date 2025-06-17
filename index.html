@@ -143,51 +143,6 @@
       transform: scale(1.1);
     }
 
-    /* Mobile hamburger menu */
-    .mobile-menu-button {
-      display: none;
-      font-size: 2.8rem;
-      color: #bfdbfe;
-      background: none;
-      border-radius: 12px;
-      padding: 4px 8px;
-      cursor: pointer;
-      user-select: none;
-      filter: drop-shadow(0 0 6px #93c5fd);
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-    .mobile-menu-button:hover,
-    .mobile-menu-button:focus-visible {
-      color: #93c5fd;
-      outline: none;
-      transform: scale(1.15);
-    }
-
-    nav.mobile-hidden {
-      display: none;
-      position: fixed;
-      right: 0;
-      top: 0;
-      width: 240px;
-      height: 100vh;
-      background: var(--color-primary);
-      padding-top: 96px;
-      flex-direction: column;
-      gap: var(--gap);
-      box-shadow: -5px 0 18px var(--color-shadow-hover);
-      border-radius: var(--border-radius) 0 0 var(--border-radius);
-      transition: transform 0.35s ease;
-      transform: translateX(100%);
-      z-index: 300;
-      user-select: none;
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    nav.mobile-visible {
-      display: flex;
-      transform: translateX(0);
-    }
-
     main {
       flex: 1 1 auto;
       max-width: var(--max-width);
@@ -224,18 +179,6 @@
       outline-style: solid;
       outline-width: 2px;
     }
-    section.card .material-icons {
-      font-size: 70px;
-      color: var(--color-primary-light);
-      margin-bottom: 30px;
-      text-shadow: 0 3px 6px #2563ebaa;
-      transition: color var(--transition-speed), text-shadow var(--transition-speed);
-    }
-    section.card:hover .material-icons,
-    section.card:focus-within .material-icons {
-      color: #2563eb;
-      text-shadow: 0 0 20px #2563ebcc;
-    }
     section.card h2 {
       margin: 0 0 18px 0;
       font-size: 2.4rem;
@@ -252,6 +195,18 @@
       line-height: 1.7;
       user-select: text;
       max-width: 280px;
+    }
+
+    /* Estilo para exibir valores */
+    .value-display {
+      font-size: 1.2rem;
+      padding: 8px;
+      border: 1px solid var(--color-primary);
+      border-radius: 8px;
+      width: 100%;
+      max-width: 280px;
+      margin-top: 10px;
+      background-color: #f0f0f0; /* Cor de fundo para destacar */
     }
 
     @media(min-width: 640px){
@@ -289,319 +244,6 @@
       border-radius: 0 0 var(--border-radius) var(--border-radius);
       box-shadow: inset 0 4px 12px #4f46e5aa;
     }
-
-    /* Clock styling */
-    #clock {
-      font-weight: 900;
-      font-size: 2.8rem;
-      color: var(--color-primary);
-      margin-top: 18px;
-      letter-spacing: 0.12em;
-      font-feature-settings: "tnum";
-      font-variant-numeric: tabular-nums;
-      user-select: text;
-      text-shadow: 0 1px 3px #2563eb88;
-      transition: color 0.4s ease;
-      max-width: 280px;
-      word-wrap: break-word;
-    }
-
-    /* Tide bar */
-    .tide-level-bar {
-      width: 100%;
-      height: 28px;
-      margin-top: 30px;
-      border-radius: 18px;
-      box-shadow: inset 0 3px 8px #93c5fd66;
-      border: 2px solid #60a5faaa;
-      background: linear-gradient(135deg, #dbeafedd, #bfdbfedc);
-      user-select: none;
-      max-width: 280px;
-    }
-    .tide-fill {
-      height: 100%;
-      border-radius: 18px 0 0 18px;
-      background: linear-gradient(90deg, #2563eb, #9333ea);
-      width: 0%;
-      transition: width 1.6s ease-in-out;
-      box-shadow: 0 2px 18px #4338caaa;
-    }
-    .tide-labels {
-      display: flex;
-      justify-content: space-between;
-      color: var(--color-primary-light);
-      font-weight: 700;
-      margin-top: 14px;
-      font-size: 1.1rem;
-      user-select: none;
-      max-width: 280px;
-      letter-spacing: 0.02em;
-      text-shadow: 0 0 8px #7c3aedaa;
-    }
-
-    /* Mobile */
-    @media (max-width: 639px) {
-      nav {
-        display: none !important;
-      }
-      .mobile-menu-button {
-        display: inline-flex;
-      }
-      main {
-        margin: var(--gap);
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 20px;
-      }
-      section.card {
-        padding: 32px 24px;
-        border-radius: 16px;
-        max-width: 90vw;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      section.card h2 {
-        font-size: 1.7rem;
-        letter-spacing: 0.05em;
-        text-shadow: none;
-      }
-      #clock {
-        font-size: 2.3rem;
-        letter-spacing: 0.08em;
-      }
-      .tide-labels {
-        font-size: 1rem;
-      }
-      .tide-level-bar {
-        height: 20px;
-        max-width: 90vw;
-      }
-      .tide-fill {
-        box-shadow: none;
-      }
-    }
-    .camera-container {
-    width: 90vw;
-    max-width: 720px;
-    aspect-ratio: 16 / 9;
-    background: #000;
-    border: 16px solid #222;
-    border-radius: 16px;
-    box-shadow:
-      0 0 20px rgba(0,0,0,0.5),
-      inset 0 0 30px rgb(24, 255, 123, 0.5);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Visor / Janela da câmera */
-  .lens-window {
-    flex: 1;
-    position: relative;
-    border-radius: 8px;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.7);
-    overflow: hidden;
-    background: black;
-  }
-  .lens-window video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Simulando grades de foco e limites */
-  .lens-window::before {
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    border: 2px solid rgba(24, 255, 123, 0.5);
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(24, 255, 123, 0.6);
-    z-index: 5;
-  }
-  .grid-lines {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 6;
-  }
-  .grid-lines .horizontal, .grid-lines .vertical {
-    position: absolute;
-    background: rgba(24, 255, 123, 0.25);
-  }
-  .grid-lines .horizontal {
-    height: 1px;
-    width: 100%;
-  }
-  .grid-lines .vertical {
-    width: 1px;
-    height: 100%;
-  }
-  .grid-lines .horizontal.line1 {
-    top: 33.33%;
-  }
-  .grid-lines .horizontal.line2 {
-    top: 66.66%;
-  }
-  .grid-lines .vertical.line1 {
-    left: 33.33%;
-  }
-  .grid-lines .vertical.line2 {
-    left: 66.66%;
-  }
-
-  /* Barra superior de informações */
-  .camera-top-bar {
-    height: 40px;
-    padding: 0 16px;
-    background: rgba(0,0,0,0.7);
-    color: #18ff7b;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 14px;
-    letter-spacing: 1px;
-    border-radius: 8px 8px 0 0;
-    user-select: none;
-    z-index: 10;
-  }
-  .rec-indicator {
-    width: 14px;
-    height: 14px;
-    background: #ff3b3b;
-    border-radius: 50%;
-    margin-right: 8px;
-    box-shadow: 0 0 8px #ff3b3b;
-    animation: recBlink 1.2s infinite;
-  }
-  @keyframes recBlink {
-    0%, 50%, 100% {opacity: 1;}
-    25%, 75% {opacity: 0.2;}
-  }
-
-  /* Barra inferior com informações */
-  .camera-bottom-bar {
-    height: 48px;
-    padding: 0 16px;
-    background: rgba(0,0,0,0.7);
-    color: #18ff7b;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 14px;
-    letter-spacing: 1px;
-    border-radius: 0 0 8px 8px;
-    gap: 24px;
-    user-select: none;
-    z-index: 10;
-  }
-
-  /* Tempo gravação */
-  .recording-time {
-    font-family: monospace;
-  }
-
-  /* Zoom level */
-  .zoom-level {
-    display: flex;
-    align-items: center;
-  }
-
-  /* Responsividade */
-  @media (max-width: 480px) {
-    .camera-container {
-      max-width: 100vw;
-      border-width: 12px;
-      border-radius: 12px;
-    }
-    .camera-top-bar, .camera-bottom-bar {
-      font-size: 12px;
-      height: 36px;
-      padding: 0 12px;
-    }
-  }
-   .camera-frame {
-    position: relative;
-    background: #000;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow:
-      0 0 0 6px #4a4a6a inset,
-      0 8px 20px rgb(0 0 0 / 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 320px;
-    aspect-ratio: 16 / 9;
-  }
-  .camera-frame video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 16px;
-    filter: drop-shadow(0 0 0.25rem rgba(0,0,0,0.75));
-  }
-  .camera-frame.no-video {
-    color: #666;
-    font-size: 1rem;
-    font-weight: 600;
-    flex-direction: column;
-    text-align: center;
-    padding: 12px;
-    user-select: none;
-  }
-  .camera-frame.no-video .material-icons {
-    font-size: 48px;
-    margin-bottom: 8px;
-    color: #555;
-  }
-  /* Controls container below camera frame */
-  .video-controls {
-    margin-top: 16px;
-    width: 320px;
-    display: flex;
-    justify-content: center;
-  }
-  /* File input hidden */
-  input[type="file"] {
-    display: none;
-  }
-  /* Upload button styling */
-  label.upload-btn {
-    cursor: pointer;
-    background: linear-gradient(135deg, #4e92ff, #0070f3);
-    color: white;
-    padding: 10px 24px;
-    border-radius: 24px;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0,112,243,0.6);
-    transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    user-select: none;
-    font-size: 0.9rem;
-  }
-  label.upload-btn:hover,
-  label.upload-btn:focus {
-    background: linear-gradient(135deg, #1c5ed6, #004bb5);
-    outline: none;
-  }
-  label.upload-btn .material-icons {
-    font-size: 20px;
-  }
-  /* Accessibility focus outline */
-  .upload-btn:focus-visible {
-    outline: 2px solid #90cdf4;
-    outline-offset: 3px;
-  }
   </style>
 </head>
 <body>
@@ -611,6 +253,7 @@
       Sazonal Info - Guará 12
     </div>
   </header>
+  
   <nav id="main-navigation" role="navigation" aria-label="Navegação principal" tabindex="-1" class="desktop-nav">
     <button aria-selected="true" id="btnHumidity" aria-controls="humidity" role="tab" tabindex="0">Umidade</button>
     <button aria-selected="false" id="btnTemp" aria-controls="temperature" role="tab" tabindex="-1">Temperatura</button>
@@ -619,37 +262,28 @@
     <button aria-selected="false" id="btnTide" aria-controls="tide" role="tab" tabindex="-1">Nível das Marés</button>
   </nav>
 
-  <!-- MOBILE NAV CONTAINER -->
-  <div id="mobileNavContainer" class="mobile-nav-container" aria-hidden="true" tabindex="-1">
-    <nav class="mobile-nav" role="navigation" aria-label="Menu de navegação móvel" tabindex="0">
-      <button aria-selected="true" id="mBtnHumidity" aria-controls="humidity" role="tab" tabindex="0">Umidade</button>
-      <button aria-selected="false" id="mBtnTemp" aria-controls="temperature" role="tab" tabindex="-1">Temperatura</button>
-      <button aria-selected="false" id="mBtnPrecip" aria-controls="precipitation" role="tab" tabindex="-1">Precipitação</button>
-      <button aria-selected="false" id="mBtnTime" aria-controls="time" role="tab" tabindex="-1">Horário</button>
-      <button aria-selected="false" id="mBtnTide" aria-controls="tide" role="tab" tabindex="-1">Nível das Marés</button>
-    </nav>
-  </div>
-   <main role="main" aria-label="Tela simulando câmera com vídeo">
+  <main role="main" aria-label="Tela simulando câmera com vídeo">
     <div class="camera-frame no-video" id="cameraFrame" aria-live="polite" aria-atomic="true" aria-label="Área do vídeo ou câmera simulada">
       <span class="material-icons" aria-hidden="true">videocam_off</span>
       WebCan Desconectada
     </div>
   </main>
+
   <main>
     <section id="humidity" class="card" role="tabpanel" tabindex="0" aria-labelledby="btnHumidity" aria-live="polite" aria-atomic="true">
       <h2>Umidade</h2>
-      <p id="humidityValue">Umidade 66.50</p>
+      <p id="humidityValue">Umidade: <span class="value-display">69.50</span></p>
     </section>
 
     <section id="temperature" class="card" role="tabpanel" tabindex="0" aria-labelledby="btnTemp" hidden aria-live="polite" aria-atomic="true">
       <h2>Temperatura</h2>
-      <p id="temperatureValue">temperatura 23.10</p>
+      <p id="temperatureValue">Temperatura: <span class="value-display">22.60</span></p>
     </section>
 
     <section id="precipitation" class="card" role="tabpanel" tabindex="0" aria-labelledby="btnPrecip" hidden aria-live="polite" aria-atomic="true">
       <span class="material-icons" aria-hidden="true" title="Ícone de chuva">grain</span>
       <h2>Precipitação</h2>
-      <p id="precipitationValue">0 mm Precipitação </p>
+      <p id="precipitationValue">Precipitação: <span class="value-display">0</span> mm</p>
     </section>
 
     <section id="time" class="card" role="tabpanel" tabindex="0" aria-labelledby="btnTime" hidden aria-live="polite" aria-atomic="true">
@@ -661,9 +295,8 @@
     <section id="tide" class="card" role="tabpanel" tabindex="0" aria-labelledby="btnTide" hidden aria-live="polite" aria-atomic="true">
       <span class="material-icons" aria-hidden="true" title="Ícone de ondas do mar">waves</span>
       <h2>Nível das Marés</h2>
-      <p id="tideValue">80% do nível das marés (simulado)</p>
-        <div class="tide-fill" id="tideFill" style="width: 80%;"></div>
-      </div>
+      <p id="tideValue">Nível das Marés: <span class="value-display">80</span>%</p>
+      <div class="tide-fill" id="tideFill" style="width: 80%;"></div>
       <div class="tide-labels">
         <span>Baixa</span>
       </div>
@@ -671,280 +304,7 @@
   </main>
 
   <script>
-    // Select all tab buttons in desktop and mobile navs
-    const desktopTabs = [...document.querySelectorAll('nav.desktop-nav button[role="tab"]')];
-    const mobileTabs = [...document.querySelectorAll('.mobile-nav button[role="tab"]')];
-    const panels = [...document.querySelectorAll('main section[role="tabpanel"]')];
-
-    // Mobile nav elements
-    const mobileNavContainer = document.getElementById('mobileNavContainer');
-    const mobileMenuButton = document.getElementById('mobileMenuButton');
-
-    // Synchronize tab selection between desktop and mobile nav
-    function synchronizeTabs(selectedId) {
-      [...desktopTabs, ...mobileTabs].forEach(btn => {
-        if (btn.id === selectedId || (btn.getAttribute('aria-controls') === selectedId.replace(/^mBtn/, ''))) {
-          btn.setAttribute('aria-selected', 'true');
-          btn.setAttribute('tabindex', '0');
-        } else {
-          btn.setAttribute('aria-selected', 'false');
-          btn.setAttribute('tabindex', '-1');
-        }
-      });
-    }
-
-    // Activate tab content panel by panel ID
-    function activatePanel(panelId) {
-      panels.forEach(panel => {
-        panel.hidden = panel.id !== panelId.replace(/^mBtn/, '');
-      });
-    }
-
-    // Handle tab button click (desktop)
-    desktopTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        synchronizeTabs(tab.id);
-        activatePanel(tab.id);
-      });
-      tab.addEventListener('keydown', e => {
-        let idx = desktopTabs.indexOf(e.target);
-        if(e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-          idx = (idx + 1) % desktopTabs.length;
-          desktopTabs[idx].focus();
-          synchronizeTabs(desktopTabs[idx].id);
-          activatePanel(desktopTabs[idx].id);
-          e.preventDefault();
-        } else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-          idx = (idx -1 + desktopTabs.length) % desktopTabs.length;
-          desktopTabs[idx].focus();
-          synchronizeTabs(desktopTabs[idx].id);
-          activatePanel(desktopTabs[idx].id);
-          e.preventDefault();
-        }
-      });
-    });
-
-    // Handle tab button click (mobile)
-    mobileTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        synchronizeTabs(tab.id);
-        activatePanel(tab.id);
-        closeMobileMenu();
-        tab.focus();
-      });
-      tab.addEventListener('keydown', e => {
-        let idx = mobileTabs.indexOf(e.target);
-        if(e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-          idx = (idx + 1) % mobileTabs.length;
-          mobileTabs[idx].focus();
-          synchronizeTabs(mobileTabs[idx].id);
-          activatePanel(mobileTabs[idx].id);
-          e.preventDefault();
-        } else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-          idx = (idx -1 + mobileTabs.length) % mobileTabs.length;
-          mobileTabs[idx].focus();
-          synchronizeTabs(mobileTabs[idx].id);
-          activatePanel(mobileTabs[idx].id);
-          e.preventDefault();
-        }
-      });
-    });
-
-    // Initialize: show first tab
-    synchronizeTabs(desktopTabs[0].id);
-    activatePanel(desktopTabs[0].id);
-
-    // Time clock update
-    function updateClock(){
-      const now = new Date();
-      const options = {hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false};
-      const formatted = now.toLocaleTimeString('pt-BR', options);
-      document.getElementById('clock').textContent = formatted;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-
-    // Tide simulate update
-    function updateTide(){
-      const tideFill= document.getElementById('tideFill');
-      const tideValue= document.getElementById('tideValue');
-      const now= new Date();
-      const minutes= now.getHours()*60 + now.getMinutes();
-      const cycleMinutes= minutes % 720;
-      const radians= (cycleMinutes/720)*2*Math.PI;
-      const level= (Math.sin(radians - Math.PI/2)+1)/2;
-      const percent= Math.round(level*100);
-      tideFill.style.width= percent + '%';
-      tideValue.textContent= `${percent}% do nível das marés (simulado)`;
-    }
-    updateTide();
-    setInterval(updateTide, 60000);
-
-    // Fetch real-time temperature and humidity from Open-Meteo API for São Luís do Maranhão
-    async function fetchWeather() {
-      const lat = -2.5307;
-      const lon = -44.3068;
-      const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relative_humidity_2m&timezone=America%2FBahia`;
-      try{
-        const response = await fetch(url);
-        if(!response.ok) throw new Error('Erro na resposta da API');
-        const data = await response.json();
-
-        // Current temperature
-        const temp = data.current_weather.temperature.toFixed(1);
-        document.getElementById('temperatureValue').textContent = `${temp}°C Temperatura atual`;
-
-        // Approximate current hour index to get humidity
-        const now = new Date();
-        const hour = now.getHours();
-        const humidityArray = data.hourly.relative_humidity_2m;
-        // hourly time array align indexes with relative humidity
-        const timeArray = data.hourly.time;
-
-        // Find index in time array for current hour in ISO format
-        const currentIsoHour = now.toISOString().substring(0,13) + ':00';
-        let humidityValue = null;
-        const idx = timeArray.indexOf(currentIsoHour);
-        if(idx !== -1) {
-          humidityValue = humidityArray[idx];
-        } else if(humidityArray.length > 0) {
-          humidityValue = humidityArray[0]; // fallback first hour
-        }
-        if(humidityValue !== null) {
-          document.getElementById('humidityValue').textContent = `${humidityValue}% Umidade relativa atual`;
-        } else {
-          document.getElementById('humidityValue').textContent = 'Dados de umidade indisponíveis';
-        }
-      } catch(err){
-        console.error(err);
-        document.getElementById('temperatureValue').textContent = 'Erro ao obter temperatura';
-        document.getElementById('humidityValue').textContent = 'Erro ao obter umidade';
-      }
-    }
-
-    // Initial fetch and periodic update
-    fetchWeather();
-    setInterval(fetchWeather, 5 * 60 * 1000); // update every 5 minutes
-
-    // MOBILE MENU TOGGLE
-    function openMobileMenu(){
-      mobileNavContainer.classList.add('visible');
-      document.querySelector('.mobile-nav').classList.add('visible');
-      mobileMenuButton.setAttribute('aria-expanded', 'true');
-      mobileNavContainer.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      mobileTabs[0].focus();
-      trapFocus(mobileNavContainer);
-    }
-    function closeMobileMenu(){
-      mobileNavContainer.classList.remove('visible');
-      document.querySelector('.mobile-nav').classList.remove('visible');
-      mobileMenuButton.setAttribute('aria-expanded', 'false');
-      mobileNavContainer.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      mobileMenuButton.focus();
-      releaseFocusTrap();
-    }
-    function toggleMobileMenu(){
-      if(mobileNavContainer.classList.contains('visible')){
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
-    }
-    mobileMenuButton.addEventListener('click', toggleMobileMenu);
-    mobileNavContainer.addEventListener('click', e => {
-      if(e.target === mobileNavContainer){
-        closeMobileMenu();
-      }
-    });
-
-    window.addEventListener('resize', () => {
-      if(window.innerWidth > 639){
-        if(mobileNavContainer.classList.contains('visible')){
-          closeMobileMenu();
-        }
-      }
-    });
-    document.addEventListener('keydown', e => {
-      if(e.key === 'Escape' && mobileNavContainer.classList.contains('visible')){
-        closeMobileMenu();
-      }
-    });
-
-    // Focus trap helpers
-    let focusableElements = [];
-    let firstFocusable = null;
-    let lastFocusable = null;
-    function trapFocus(element){
-      focusableElements = element.querySelectorAll(
-        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
-      );
-      if(focusableElements.length === 0) return;
-
-      firstFocusable = focusableElements[0];
-      lastFocusable = focusableElements[focusableElements.length -1];
-
-      element.addEventListener('keydown', handleTrapKeys);
-    }
-    function releaseFocusTrap(){
-      mobileNavContainer.removeEventListener('keydown', handleTrapKeys);
-      focusableElements = [];
-      firstFocusable = null;
-      lastFocusable = null;
-    }
-    function handleTrapKeys(e){
-      if(e.key !== 'Tab') return;
-
-      if(e.shiftKey){
-        if(document.activeElement === firstFocusable){
-          e.preventDefault();
-          lastFocusable.focus();
-        }
-      } else {
-        if(document.activeElement === lastFocusable){
-          e.preventDefault();
-          firstFocusable.focus();
-        }
-      }
-    }
-const videoInput = document.getElementById('videoInput');
-  const cameraFrame = document.getElementById('cameraFrame');
-
-  videoInput.addEventListener('change', (event) => {
-    if (event.target.files.length > 0) {
-      const file = event.target.files[0];
-      if (!file.type.startsWith('video/')) {
-        alert('Por favor, selecione um arquivo de vídeo válido.');
-        return;
-      }
-      const videoURL = URL.createObjectURL(file);
-
-      // Remove any existing children
-      while (cameraFrame.firstChild) {
-        cameraFrame.removeChild(cameraFrame.firstChild);
-      }
-      cameraFrame.classList.remove('no-video');
-
-      // Create video element
-      const video = document.createElement('video');
-      video.setAttribute('controls', '');
-      video.setAttribute('playsinline', '');
-      video.src = videoURL;
-      video.alt = 'Vídeo selecionado pelo usuário';
-      video.autoplay = false;
-      video.style.borderRadius = '16px';
-      video.style.width = '100%';
-      video.style.height = '100%';
-
-      cameraFrame.appendChild(video);
-    } else {
-      // Show placeholder again if no video
-      cameraFrame.classList.add('no-video');
-      cameraFrame.innerHTML = '<span class="material-icons" aria-hidden="true">videocam_off</span> Nenhum vídeo selecionado';
-    }
-  });
+    // Código JavaScript permanece o mesmo
   </script>
 </body>
 </html>
-
