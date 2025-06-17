@@ -304,7 +304,17 @@
   </main>
 
   <script>
-    // Código JavaScript permanece o mesmo
+    // Função para atualizar o horário em tempo real
+    function updateClock() {
+      const now = new Date();
+      const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+      const formattedTime = now.toLocaleTimeString('pt-BR', options);
+      document.getElementById('clock').textContent = formattedTime;
+    }
+
+    // Atualiza o relógio a cada segundo
+    setInterval(updateClock, 1000);
+    updateClock(); // Chama a função uma vez para definir o horário imediatamente
   </script>
 </body>
 </html>
