@@ -245,8 +245,8 @@
       box-shadow: inset 0 4px 12px #4f46e5aa;
     }
     .camera-frame {
-  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
-  border: 2px dashed var(--color-primary); /* Borda pontilhada */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8)); /* Gradiente suave */
+  border: 2px solid var(--color-primary); /* Borda sólida */
   border-radius: var(--border-radius);
   padding: 20px;
   display: flex;
@@ -254,8 +254,29 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 4px 20px var(--color-shadow);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+  max-width: 100%; /* Para garantir que o vídeo não ultrapasse a largura do contêiner */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
 }
+
+.camera-frame:hover {
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25); /* Sombra mais intensa ao passar o mouse */
+}
+
+.camera-frame p {
+  font-size: 1.2rem; /* Tamanho da fonte */
+  color: var(--color-text-primary); /* Cor do texto */
+  margin-top: 10px; /* Margem superior */
+  font-weight: 600; /* Peso da fonte */
+}
+
+.camera-frame .material-icons {
+  font-size: 3rem; /* Tamanho do ícone */
+  color: var(--color-primary); /* Cor do ícone */
+  margin-bottom: 10px; /* Margem inferior */
+}
+
   </style>
 </head>
 <body>
