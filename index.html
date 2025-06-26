@@ -244,6 +244,18 @@
       border-radius: 0 0 var(--border-radius) var(--border-radius);
       box-shadow: inset 0 4px 12px #4f46e5aa;
     }
+    .camera-frame {
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com leve transparência */
+  border: 2px dashed var(--color-primary); /* Borda pontilhada */
+  border-radius: var(--border-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 20px var(--color-shadow);
+}
   </style>
 </head>
 <body>
@@ -263,10 +275,10 @@
   </nav>
 
   <main role="main" aria-label="Tela simulando câmera com vídeo">
-    <div class="camera-frame no-video" id="cameraFrame" aria-live="polite" aria-atomic="true" aria-label="Área do vídeo ou câmera simulada">
-      <span class="material-icons" aria-hidden="true">videocam_off</span>
-      WebCan Desconectada
-    </div>
+   <div class="camera-frame no-video" id="cameraFrame" aria-live="polite" aria-atomic="true" aria-label="Área do vídeo ou câmera simulada">
+  <span class="material-icons" aria-hidden="true" title="Ícone de câmera">videocam</span>
+  <p>WebCan Desconectada. Verifique sua conexão ou tente novamente.</p>
+</div>
   </main>
 
   <main>
